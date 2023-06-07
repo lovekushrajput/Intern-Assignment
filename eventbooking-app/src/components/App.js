@@ -25,7 +25,7 @@ function App() {
 
     const events = (event, i) => (
         <>
-            <div className='w-1/4 flex flex-col pr-2 mb-8 cursor-pointer' key={i} onClick={() => handleClick(event.show)}>
+            <div className='w-1/4 max-[520px]:w-full flex flex-col pr-2 mb-8 cursor-pointer' key={i} onClick={() => handleClick(event.show)}>
                 <img src={event.show.image.medium} alt="show-imag" />
                 <div >
                     <h2 className='text-center text-2xl'>{event.show.name}</h2>
@@ -42,7 +42,7 @@ function App() {
     return (
         <>
             <h1 className='text-center text-4xl font-bold mb-7'>Show Booking</h1>
-            <div className='flex flex-wrap justify-start p-2'>
+            <div className='flex sm:flex-wrap max-[520px]:flex-col md:flex-wrap lg:flex-wrap justify-start p-2'>
                 {
                     show ? <Event show={show} setshow={setShow} /> : state.map(events)
                 }

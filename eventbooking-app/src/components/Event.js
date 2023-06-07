@@ -34,7 +34,7 @@ function Event({ show, setshow }) {
 
     const renderForm = () => (
         <div className='flex w-full justify-center'>
-            <form action="#" onSubmit={handleSubmit} className='border border-gray-400  w-2/5 flex flex-col p-4'>
+            <form action="#" onSubmit={handleSubmit} className='border border-gray-400  w-2/5 flex flex-col sm:w-full md:w-[70%] p-4 max-[520px]:w-full'>
                 <label htmlFor="name" className='mb-2'>Movie Name</label>
                 <input type="text" id='name' name='name' value={show.name} className='border border-gray-300 pl-1 py-2 mb-6' readOnly />
 
@@ -42,11 +42,11 @@ function Event({ show, setshow }) {
                 <label htmlFor="language" className='mb-2'>Movie Language</label>
                 <input type="text" id='language' name='language' value={show.language} className='border border-gray-300 pl-1 py-2 mb-6' readOnly />
 
-                <input type="text" name='username' placeholder='Enter Your name' className='border border-gray-300 pl-1 py-2 mb-6' onChange={handleChange} required/>
+                <input type="text" name='username' placeholder='Enter Your name' className='border border-gray-300 pl-1 py-2 mb-6' onChange={handleChange} required />
 
-                <input type="text" name='phone' placeholder='Phone Number' className='border border-gray-300 pl-1 py-2 mb-6' onChange={handleChange} required/>
+                <input type="text" name='phone' placeholder='Phone Number' className='border border-gray-300 pl-1 py-2 mb-6' onChange={handleChange} required />
 
-                <input type="number" name='tickets' placeholder='Number of Ticket' className='border border-gray-300 pl-1 py-2 mb-6' onChange={handleChange} required/>
+                <input type="number" name='tickets' placeholder='Number of Ticket' className='border border-gray-300 pl-1 py-2 mb-6' onChange={handleChange} required />
 
                 <input type="date" name='date' className='border border-gray-300 pl-1 py-2 mb-6' onChange={handleChange} required />
 
@@ -59,8 +59,8 @@ function Event({ show, setshow }) {
     const renderShow = () => (
         <>
             <button onClick={() => setshow('')} className='border border-red-400 p-1 mb-5'>Back</button>
-            <div className='flex'>
-                <img className='w-1/4 mr-3' src={show.image.original} alt="event-images" />
+            <div className='flex sm:flex-col sm:w-full md:flex-col md:w-full max-[520px]:flex-col max-[520px]:w-full'>
+                <img className='w-1/4 mr-3 max-[520px]:w-full  sm:1/2 md:1/2' src={show.image.original} alt="event-images" />
                 <div>
                     <h2 className='text-3xl mb-3'>{show.name}</h2>
                     {/* rating */}
@@ -79,7 +79,7 @@ function Event({ show, setshow }) {
                     {/* language */}
                     <p className='border inline-block py-1 px-2'>{show.language}</p>
 
-                    <ul className='flex justify-between w-1/2 my-5'>
+                    <ul className='flex justify-between w-1/2 my-5 max-[520px]:w-full'>
                         <li>
                             00h {show.runtime}m
                         </li>
@@ -94,10 +94,10 @@ function Event({ show, setshow }) {
                         </li>
                     </ul>
 
-                    <button onClick={handleClick} className='bg-red-500 text-white px-6 py-2 rounded cursor-pointer'>Book Show</button>
+                    <button onClick={handleClick} className='bg-red-500 text-white px-6 py-2 rounded cursor-pointer max-[520px]:w-full max-[520px]:mb-4'>Book Show</button>
                 </div>
 
-                <div className='w-1/4 flex flex-col'>
+                <div className='w-1/4 flex flex-col max-[520px]:w-full max-[520px]:mb-7'>
 
                     {
                         localStorage.getItem(show.name) &&
